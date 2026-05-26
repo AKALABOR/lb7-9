@@ -1,0 +1,52 @@
+.container {
+  background-color: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+
+  h2 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+
+  strong {
+    color: var(--accent-color);
+  }
+}
+
+.action {
+  text-align: center;
+  p { margin: 0.5rem 0; }
+  
+  strong { color: var(--secondary-color); }
+}
+
+.btn {
+  margin-top: 1rem;
+  background-color: var(--danger-color);
+  color: white;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: transform 0.2s, opacity 0.2s;
+
+  &:hover:not(:disabled) {
+    transform: scale(1.05);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: #555;
+  }
+}

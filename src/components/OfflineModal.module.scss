@@ -1,0 +1,53 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.modal {
+  background-color: var(--card-bg);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  text-align: center;
+  border: 2px solid var(--primary-color);
+  animation: scaleUp 0.3s ease-out forwards;
+  max-width: 400px;
+  width: 90%;
+
+  h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+  }
+}
+
+.amount {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--accent-color);
+  margin: 1.5rem 0;
+  text-shadow: 0 0 10px rgba(237, 222, 164, 0.5);
+}
+
+.btn {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: opacity 0.2s;
+
+  &:hover { opacity: 0.9; }
+}
+
+@keyframes scaleUp {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}

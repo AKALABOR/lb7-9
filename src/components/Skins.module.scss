@@ -1,0 +1,76 @@
+.container {
+  background-color: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+
+  h2 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    text-align: center;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  border: 2px solid transparent;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  &.active {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 10px rgba(237, 222, 164, 0.5);
+  }
+}
+
+.preview {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-weight: bold;
+  text-align: center;
+  padding: 0.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+
+  button {
+    padding: 0.8rem;
+    font-weight: bold;
+    color: #fff;
+    transition: opacity 0.2s;
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.btnEquip {
+  background-color: var(--secondary-color);
+  &:hover:not(:disabled) { opacity: 0.9; }
+}
+
+.btnActive {
+  background-color: var(--card-bg);
+  color: var(--text-color) !important;
+}
+
+.btnBuy {
+  background-color: var(--primary-color);
+  &:hover:not(:disabled) { opacity: 0.9; }
+}
