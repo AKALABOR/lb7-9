@@ -8,15 +8,12 @@ export const useGameState = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [offlineEarnings, setOfflineEarnings] = useState(0);
 
-  // Load state on mount
   useEffect(() => {
     const init = async () => {
       const savedState = await loadGameState();
       if (savedState) {
-        // Handle missing fields for backward compatibility
         const mergedState = { ...INITIAL_STATE, ...savedState };
         
-        // Calculate offline earnings
         const earnings = calculateOfflineIncome(mergedState);
         if (earnings > 0) {
           mergedState.credits += earnings;
@@ -33,7 +30,6 @@ export const useGameState = () => {
     init();
   }, []);
 
-  // Save state periodically and when unmounting
   useEffect(() => {
     if (!isLoaded) return;
     
@@ -43,12 +39,11 @@ export const useGameState = () => {
         saveGameState(nextState);
         return nextState;
       });
-    }, 5000); // Save every 5 seconds
+    }, 5000);
 
     return () => clearInterval(interval);
   }, [isLoaded]);
 
-  // Passive income and effects expiration loop (every second)
   useEffect(() => {
     if (!isLoaded) return;
 
@@ -56,7 +51,6 @@ export const useGameState = () => {
       setState(prev => {
         const now = Date.now();
         
-        // Remove expired bonuses/antibonuses
         const activeBonuses = prev.activeBonuses.filter(b => b.expiresAt > now);
         const activeAntiBonuses = prev.activeAntiBonuses.filter(b => b.expiresAt > now);
 
@@ -143,8 +137,8 @@ export const useGameState = () => {
           ...INITIAL_STATE,
           duiktcoins: prev.duiktcoins + gain,
           prestigeLevel: prev.prestigeLevel + 1,
-          unlockedSkins: prev.unlockedSkins, // Keep skins
-          activeSkin: prev.activeSkin,       // Keep active skin
+          unlockedSkins: prev.unlockedSkins,
+          activeSkin: prev.activeSkin,
           lastSaved: Date.now(),
         };
       }
@@ -189,6 +183,6 @@ export const useGameState = () => {
     addBonus,
     addAntiBonus,
     clearOfflineEarnings,
-    debugAddCredits // Helpful for testing
+    debugAddCredits
   };
 };

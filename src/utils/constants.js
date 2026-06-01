@@ -26,7 +26,7 @@ export const UPGRADES_CONFIG = {
     description: '+1 кредит за клік',
     basePrice: 10,
     priceMultiplier: 1.5,
-    effect: (level) => level * 1, // flat increase
+    effect: (level) => level * 1,
   },
   autoClicker: {
     id: 'autoClicker',
@@ -34,7 +34,7 @@ export const UPGRADES_CONFIG = {
     description: '+1 кредит на секунду',
     basePrice: 50,
     priceMultiplier: 1.6,
-    effect: (level) => level * 1, // flat increase
+    effect: (level) => level * 1,
   },
   synergy: {
     id: 'synergy',
@@ -42,7 +42,7 @@ export const UPGRADES_CONFIG = {
     description: '+10% до всіх доходів',
     basePrice: 500,
     priceMultiplier: 2.0,
-    effect: (level) => 1 + (level * 0.1), // multiplier
+    effect: (level) => 1 + (level * 0.1),
   },
   comboMultiplier: {
     id: 'comboMultiplier',
@@ -70,5 +70,5 @@ export const SKINS_CONFIG = [
   { id: 'neon', name: 'Неон', price: 15, type: 'duiktcoins' },
 ];
 
-export const PRESTIGE_REQUIREMENT = 100000; // credits needed to prestige
-export const PRESTIGE_MULTIPLIER_PER_COIN = 0.5; // +50% per duiktcoin
+export const PRESTIGE_REQUIREMENT = 100000;
+export const PRESTIGE_MULTIPLIER_PER_COIN = 0.5;

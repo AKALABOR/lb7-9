@@ -50,7 +50,6 @@ function App() {
             <h2>{state.duiktcoins} DC</h2>
           </div>
         </div>
-        {/* <button onClick={() => debugAddCredits(10000)}>+10000 Cr (Debug)</button> */}
       </header>
 
       <main className={styles.mainGrid}>
